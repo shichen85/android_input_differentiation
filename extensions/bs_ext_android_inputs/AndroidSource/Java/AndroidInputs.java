@@ -134,9 +134,9 @@ public class AndroidInputs extends RunnerSocial {
             }
         };
 
-        View anotherView = RunnerActivity.CurrentActivity.findViewById(R.id.demogl);
-        Log.i("yoyo", "The decor view is: " + anotherView.toString());
-        this.attachToView(anotherView);
+        View mainView = RunnerActivity.CurrentActivity.findViewById(R.id.demogl);
+        Log.i("yoyo", "The main view is: " + mainView.toString());
+        this.attachToView(mainView);
     }
 
 
