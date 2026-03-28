@@ -3,7 +3,7 @@
   "%Name":"bs_ext_android_inputs",
   "androidactivityinject":null,
   "androidclassname":"AndroidInputs",
-  "androidcodeinjection":"<YYAndroidManifestUsesFeature>\r\n<uses-feature\r\n    android:name=\"android.hardware.type.pc\"\r\n    android:required=\"false\" />\r\n</YYAndroidManifestUsesFeature>",
+  "androidcodeinjection":"<YYAndroidManifestUsesFeature>\r\n<uses-feature\r\n    android:name=\"android.hardware.type.pc\"\r\n    android:required=\"false\" />\r\n</YYAndroidManifestUsesFeature>\r\n\r\n<YYAndroidInjectToApplicationTag>\r\nandroid:resizeableActivity=\"false\" android:appCategory=\"game\"\r\n</YYAndroidInjectToApplicationTag>\r\n\r\n<YYAndroidManifestApplicationInject>\r\n<property android:name=\"android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY\" android:value=\"true\" />\r\n</YYAndroidManifestApplicationInject>",
   "androidinject":null,
   "androidmanifestinject":null,
   "androidPermissions":[],
@@ -16,10 +16,7 @@
   "exportToGame":true,
   "extensionVersion":"0.0.1",
   "files":[
-    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":8,"filename":"bs_ext_android_inputs.ext","final":"","functions":[
-        {"$GMExtensionFunction":"","%Name":"_android_get_device_type","argCount":0,"args":[],"documentation":"","externalName":"_android_get_device_type","help":"","hidden":false,"kind":4,"name":"_android_get_device_type","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-        {"$GMExtensionFunction":"","%Name":"_android_setup_input_listener","argCount":0,"args":[],"documentation":"","externalName":"_android_setup_input_listener","help":"","hidden":false,"kind":4,"name":"_android_setup_input_listener","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-      ],"init":"","kind":4,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":8,"filename":"bs_ext_android_inputs.ext","final":"","functions":[],"init":"","kind":4,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":null,
   "hasConvertedCodeInjection":true,
