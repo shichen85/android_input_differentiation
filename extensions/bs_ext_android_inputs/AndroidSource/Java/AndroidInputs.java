@@ -25,7 +25,7 @@ public class AndroidInputs extends RunnerSocial {
             RunnerJNILib.DsMapAddString(dsMapIndex, "input_type", "touch");
             RunnerJNILib.CreateAsynEventWithDSMap( dsMapIndex, EVENT_OTHER_SOCIAL);  
         }
-        return true;       
+        return false;       
     }
 
     @Override
@@ -38,7 +38,7 @@ public class AndroidInputs extends RunnerSocial {
             RunnerJNILib.DsMapAddString(dsMapIndex, "input_type", "mouse");
             RunnerJNILib.CreateAsynEventWithDSMap( dsMapIndex, EVENT_OTHER_SOCIAL);  
         }
-        return true;            
+        return false;            
     }
     
 
@@ -47,8 +47,10 @@ public class AndroidInputs extends RunnerSocial {
 		int eventSource = event.getSource();
 		boolean eventFromPhysicalDevice = (event.getDeviceId() > 0);
 		boolean eventFromKeyboard = ((eventSource & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD);
+		boolean eventFromGamepad = ((eventSource & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD);
+		boolean eventFromJoystick = ((eventSource & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK);
 
-        if (eventFromKeyboard) {
+        if (eventFromKeyboard && !eventFromGamepad && !eventFromJoystick) {
             if (currentMainKeyboardInputIsHardware && !eventFromPhysicalDevice) {
                 currentMainKeyboardInputIsHardware = false;
                 Log.i("yoyo", "Switched to software keyboard input");
@@ -66,6 +68,6 @@ public class AndroidInputs extends RunnerSocial {
                 RunnerJNILib.CreateAsynEventWithDSMap( dsMapIndex, EVENT_OTHER_SOCIAL);                 
             }
         }
-        return true;
+        return false;
     }
 }
